@@ -1,0 +1,53 @@
+/*
+  The CSS in this style tag is based off of Bear Blog's default CSS.
+  https://github.com/HermanMartinus/bearblog/blob/297026a877bc2ab2b3bdfbd6b9f7961c350917dd/templates/styles/blog/default.css
+  License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
+ */
+body {
+  font-family: "Dancing Script", cursive;
+  margin: auto!important;
+  padding: 20px;
+  max-width: 1200px;
+  text-align: left;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  line-height: 1.5;
+  color: #fff;
+  background-image: url(../../public/van-gogh.gif);
+  /*background-size: cover;*/
+  height: 100vh;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong,
+a {
+	font-size: unset;
+  color: #fff;
+}
+
+h1 {
+  text-align: center;
+  font-size: 4rem;
+}
+
+#container-content{
+	background-color: hsla(0,0%,0%,.5);
+	position: relative;
+}
+
+#container-content::before{
+	content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+	-webkit-backdrop-filter: saturate(180%) blur(5px);
+    backdrop-filter: saturate(180%) blur(15px);
+	inset:0;
+	z-index: -1;
+	border-radius: 0.5rem;
+}
+
