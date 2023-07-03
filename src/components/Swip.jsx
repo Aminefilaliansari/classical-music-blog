@@ -53,21 +53,25 @@ export default function App() {
         <SwiperSlide>
           <a href="/blog/beethoven/">
             <img src="Beethoven.jpg" className="block m-auto"/>
+            <h3 className="text-center text-2xl">Beethoven</h3>
           </a>
         </SwiperSlide>
         <SwiperSlide>
-          <a href="#">
+          <a href="/blog/mozart/">
             <img src="mozart.jpg" className="block m-auto"/>
+            <h3 className="text-center text-2xl">Mozart</h3>
           </a>
         </SwiperSlide>
         <SwiperSlide>
-          <a href="#">
+          <a href="/blog/chopin/">
             <img src="chopin.jpg" className="block m-auto"/>
+            <h3 className="text-center text-2xl">Chopin</h3>
           </a>
         </SwiperSlide>
         <SwiperSlide>
-          <a href="#">
+          <a href="/blog/bach/">
             <img src="bach.jpg" className="block m-auto"/>
+            <h3 className="text-center text-2xl">Bach</h3>
           </a>
         </SwiperSlide>
         
