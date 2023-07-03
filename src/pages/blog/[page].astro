@@ -1,0 +1,28 @@
+---
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths({ paginate }: any) {
+  const arry: any[] = [];
+  const posts = (await getCollection("blog")).sort(
+    (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+  );
+  posts.map((post) => arry.push({ title: post.data.title, link: `/blog/${post.slug}/`, image: post.data.heroImage }));
+  console.log("arry:", arry);
+
+  // Generate pages from our array of astronauts, with 2 to a page
+  return paginate(arry, { pageSize: 1 });
+}
+// All paginated data is passed on the "page" prop
+const { page } = Astro.props;
+console.log("page:", page);
+---
+
+<!--Display the current page number. Astro.params.page can also be used!-->
+<h1>Page {page.currentPage}</h1>
+<ul>
+  <!--List the array of astronaut info-->
+  {page.data.map(({ title, link }: any) => <a href={link}><li>{title}</li></a>)}
+</ul>
+
+{page.url.prev ? <a href={page.url.prev}>BACK</a> : null}
+{page.url.next ? <a href={page.url.next}>NEXT</a> : null}
